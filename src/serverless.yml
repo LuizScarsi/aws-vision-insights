@@ -1,0 +1,52 @@
+service: aws-vision-insights
+frameworkVersion: '3'
+useDotenv: true
+
+provider:
+  name: aws
+  runtime: python3.9
+  environment:
+    AWS_REGION_NAME: ${env:AWS_REGION_NAME}
+    BUCKET_NAME: ${env:BUCKET_NAME}
+  iam:
+    role:
+      name: iam-vision-insights-role
+      statements:
+        - Effect: Allow
+          Action: s3:*
+          Resource: "*"
+        - Effect: Allow
+          Action: rekognition:*
+          Resource: "*"
+
+resources:
+  Resources:
+    MyS3Bucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: ${env:BUCKET_NAME}
+        PublicAccessBlockConfiguration:
+          RestrictPublicBuckets: false
+
+    MyBucketPolicy:
+      Type: AWS::S3::BucketPolicy
+      Properties:
+        Bucket:
+          Ref: MyS3Bucket
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Principal:
+                AWS: '*'
+              Action:
+                - s3:GetObject
+              Resource:
+                Fn::Join:
+                  - ''
+                  - - 'arn:aws:s3:::'
+                    - Ref: MyS3Bucket
+                    - '/*'
+
+functions:
+  
