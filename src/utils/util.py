@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta, timezone
 
-def formatTime():
+def format_time():
         
     # Configuration of the time zone for Brazil (São Paulo)
     timezoneBR = timezone(timedelta(hours=-3))
