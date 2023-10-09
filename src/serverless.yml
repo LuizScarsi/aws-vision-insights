@@ -49,4 +49,15 @@ resources:
                     - '/*'
 
 functions:
-  
+  v1Description:
+    handler: routes/v1/v1_description.v1_description
+    events:
+      - httpApi:
+          path: /v1
+          method: get
+  v1Vision:
+    handler: routes/v1/v1_vision.v1_vision
+    events:
+      - httpApi:
+          path: /v1
+          method: post
