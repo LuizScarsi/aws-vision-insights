@@ -1,6 +1,6 @@
-# <p align="center"> AWS Vision Insights</p>
+<h1 align="center"> AWS Vision Insights</h1>
 
-### <p align="center"> Image analysis and emotions classification with Amazon Rekognition </p>
+<h2 align="center"> Image analysis and emotions classification with Amazon Rekognition </h2>
 
   <p align="center" >
     <img src="https://img.shields.io/badge/-AWS%20API%20Gateway-000?&logo=amazonapigateway" height="25">
