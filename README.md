@@ -19,7 +19,7 @@
 
 <a id="anchor1"></a>
 
-## 2 - AWS Architecture
+## 1 - AWS Architecture
 
 ![AWS Architecture](./assets/aws-architecture.png)
 
@@ -79,7 +79,7 @@ serverless deploy
 
 <a id="anchor3"></a>
 
-## 3 File structure:
+## 3 - File structure:
 
 - **src**
   - **controllers**
