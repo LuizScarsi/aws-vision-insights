@@ -67,3 +67,15 @@ functions:
       - httpApi:
           path: /v1
           method: post
+  v2Description:
+    handler: routes/v2/v2_description.v2_description
+    events:
+      - httpApi:
+          path: /v2
+          method: get
+  v2Vision:
+    handler: routes/v2/v2_vision.v2_vision
+    events:
+      - httpApi:
+          path: /v2
+          method: post
